@@ -14,6 +14,7 @@
 		F0FA1E1F19EC443A00EDBADA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FA1E1E19EC443A00EDBADA /* Images.xcassets */; };
 		F0FA1E2219EC443A00EDBADA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FA1E2019EC443A00EDBADA /* LaunchScreen.xib */; };
 		F0FA1E2E19EC443A00EDBADA /* SimplePeakFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FA1E2D19EC443A00EDBADA /* SimplePeakFinderTests.m */; };
+		F0FA1E3919EC444B00EDBADA /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FA1E3819EC444B00EDBADA /* MyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		F0FA1E2719EC443A00EDBADA /* SimplePeakFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplePeakFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FA1E2C19EC443A00EDBADA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0FA1E2D19EC443A00EDBADA /* SimplePeakFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimplePeakFinderTests.m; sourceTree = "<group>"; };
+		F0FA1E3719EC444B00EDBADA /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		F0FA1E3819EC444B00EDBADA /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				F0FA1E1519EC443A00EDBADA /* AppDelegate.h */,
 				F0FA1E1619EC443A00EDBADA /* AppDelegate.m */,
 				F0FA1E1819EC443A00EDBADA /* ViewController.h */,
+				F0FA1E3719EC444B00EDBADA /* MyView.h */,
+				F0FA1E3819EC444B00EDBADA /* MyView.m */,
 				F0FA1E1919EC443A00EDBADA /* ViewController.m */,
 				F0FA1E1B19EC443A00EDBADA /* Main.storyboard */,
 				F0FA1E1E19EC443A00EDBADA /* Images.xcassets */,
@@ -168,6 +173,7 @@
 				TargetAttributes = {
 					F0FA1E0D19EC443A00EDBADA = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 3F2JBZE82C;
 					};
 					F0FA1E2619EC443A00EDBADA = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -219,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FA1E3919EC444B00EDBADA /* MyView.m in Sources */,
 				F0FA1E1A19EC443A00EDBADA /* ViewController.m in Sources */,
 				F0FA1E1719EC443A00EDBADA /* AppDelegate.m in Sources */,
 				F0FA1E1419EC443A00EDBADA /* main.m in Sources */,
