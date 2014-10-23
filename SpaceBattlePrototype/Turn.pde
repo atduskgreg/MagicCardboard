@@ -4,45 +4,33 @@ class Turn{
   boolean scanned = false;
   int num;
   int numPlayers;
+  int actionsPerTurn;
+  int actionsTaken;
   
   Turn(int numPlayers){
     this.num = 0;
     this.numPlayers = numPlayers;
+    this.actionsTaken = 0;
   }
   
-  boolean hasFired(){
-    return fired;
+  void setNumActions(int n){
+    actionsPerTurn = n;
   }
   
-  boolean hasMoved(){
-    return moved;    
+  void takeAction(){
+    actionsTaken++;
   }
   
-  boolean hasScanned(){
-    return scanned;
+  int actionsRemaining(){
+    return actionsPerTurn - actionsTaken;
   }
-  
+ 
   int playerNum(){
-//    println("pn: " + this.num);
     return this.num;
   }
   
-  void fire(){
-    fired = true;
-  }
-  
-  void move(){
-    moved = true;
-  }
-  
-  void scan(){
-    scanned = true;
-  }
-  
   void next(){
-    fired = false;
-    moved = false;
-    scanned = false;
+    actionsTaken = 0;
     num++;
     if(num > numPlayers-1){
       num = 0;
@@ -50,8 +38,7 @@ class Turn{
   }
   
   boolean isComplete(){
-    return moved && fired && scanned;
-    
+    return actionsRemaining() <= 0;
   }
 
 }

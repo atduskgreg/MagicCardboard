@@ -20,6 +20,7 @@ void setup() {
   players.add(new Player("1", 400, 50));
   players.add(new Player("2", 400, height-50));
   turn = new Turn(2);
+  turn.setNumActions(3);
 
   stars = createGraphics(width, height);
   drawStars(stars);
@@ -54,6 +55,7 @@ void draw() {
       boolean isHit = player.checkHits(missiles);
       if (isHit) {
         player.die();
+        debug = true;
       }
     }
 
@@ -92,27 +94,29 @@ Player currentPlayer() {
   return players.get(turn.playerNum());
 }
 
+void drawTurns(){
+  pushMatrix();
+  pushStyle();
+  
+  noStroke();
+  fill(currentPlayer().getColor());
+  
+  for(int i = 0; i < turn.actionsRemaining(); i++){
+    
+  }
+  
+  popStyle();
+  popMatrix();
+  
+}
+
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP || keyCode == DOWN || keyCode == LEFT || keyCode == RIGHT) {
-      if (!turn.hasMoved()) {
+      if (!turn.isComplete()) {
         currentPlayer().move(keyCode);
-        turn.move();
+        turn.takeAction();
       }
-    }
-  }
-
-  if (key == '1' || key == '2' || key == '3' || key == '4') {
-    debug = !debug;
-    if (!turn.hasFired()) {
-//      int dy = 1;
-//      if (key == '2') {
-//        dy = -1;
-//      } 
-//      Missile missile = new Missile(currentPlayer().pos.x, currentPlayer().pos.y, new PVector(0, dy), currentPlayer());
-//      missile.move();
-//      missiles.add(missile);
-//      turn.fire();
     }
   }
 }
@@ -143,26 +147,24 @@ void dashedLine(float x1, float y1, float x2, float y2) {
 }
 
 void mouseReleased() {
-  if (!turn.hasFired() && isAiming) {
-    //    print(pmouseX + "," + pmouseX);
-
+  if (!turn.isComplete() && isAiming) {
     PVector dir = PVector.sub(new PVector(pmouseX, pmouseY), currentPlayer().pos);
     dir.normalize();
     Missile missile = new Missile(currentPlayer().pos.x, currentPlayer().pos.y, dir, currentPlayer());
     missile.move();
     missiles.add(missile);
-    turn.fire();
+    turn.takeAction();
     isAiming = false;
   }
 }
 
 void mousePressed() {
-  if (!turn.hasScanned() && keyPressed) {
+  if (!turn.isComplete() && keyPressed) {
     pingAt = millis();
     showPing = true;
     pingX = mouseX;
     pingY = mouseY;
-    turn.scan();
+    turn.takeAction();
   }
 }
 

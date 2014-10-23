@@ -16,10 +16,14 @@ class Player {
     this.dead = true;
   }
   
+  color getColor(){
+    return c;
+  }
+  
   boolean checkHits(ArrayList<Missile> missiles){
     boolean result = false;
     for(Missile missile : missiles){
-      if(PVector.dist(missile.pos, this.pos)< 50){
+      if(PVector.dist(missile.pos, this.pos)< 25){
         result = true;
         break;
       } 
