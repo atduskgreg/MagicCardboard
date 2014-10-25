@@ -7,16 +7,12 @@ class ContainGame extends Game {
 
     barriers = new ArrayList<Barrier>();
 
-    Enemy e = new Enemy((int)random(w), (int)random(h));
-    e.setGoal(w, h);
-    enemies.add(e);
+//    Enemy e = new Enemy((int)random(w), (int)random(h));
+//    e.setGoal(w, h);
+//    enemies.add(e);
   }
   
-  void addEnemy(){
-    Enemy e = new Enemy((int)random(rect.width), (int)random(rect.height));
-    e.setGoal(rect.width, rect.height);
-    enemies.add(e);
-  }
+ 
 
   void onNewToken(Token token) {
     if (tokens.size() > 1) {

@@ -41,6 +41,12 @@ class Game {
     }
   }
   
+   void addEnemy(){
+    Enemy e = new Enemy((int)random(rect.width), (int)random(rect.height));
+    e.setGoal(rect.width, rect.height);
+    enemies.add(e);
+  }
+  
   void drawEnemies(){
     for(Enemy enemy : enemies){
       enemy.update();
@@ -73,8 +79,10 @@ class Game {
     rect = new Rectangle(x,y,w,h);
   }
 
-  //implement in subclass
-  void innerDraw(){}
+  //override in subclass
+  void innerDraw(){
+    drawEnemies();
+  }
 
   void draw() {
     pushMatrix();
@@ -94,6 +102,7 @@ class Game {
     innerDraw();
     popMatrix();
     popStyle();
+
 
     for (Token token : tokens) {
       token.draw();
