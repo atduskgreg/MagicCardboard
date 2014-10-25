@@ -3,12 +3,11 @@ import java.awt.Rectangle;
 class Game {
   ArrayList<Token> tokens;
   Rectangle rect;
-  color bg;
+  ArrayList<Enemy> enemies;
 
   Game(int x, int y, int w, int h) {
     setup();
     setPosition(x, y, w, h);
-    bg = color(255);
   }
   
   void mousePressed(int x, int y){
@@ -22,11 +21,11 @@ class Game {
        }
        if(!onToken){
          addToken(x - rect.x,y - rect.y);
-       } else {
-         println("on token");
        }
     }
   }
+  
+ 
   
   void mouseDragged(int px, int py, int x, int y){
     // drag away?
@@ -36,10 +35,25 @@ class Game {
        }
     }
   }
+  
+  void drawEnemies(){
+    for(Enemy enemy : enemies){
+      enemy.update();
+      enemy.draw();
+    }
+  }
+
+  void onNewToken(Token t){
+    // implemented in sublcasses
+  }
 
   void addToken(float tx, float ty){
-    tokens.add(new Token(tx,ty));
+    Token t =  new Token(tx,ty);
+    tokens.add(t);
+    onNewToken(t);
   }
+  
+ 
 
   boolean contains(int x, int y){
     return rect.contains(x,y);
@@ -47,6 +61,7 @@ class Game {
   
   void setup() {
     tokens = new ArrayList<Token>();
+    enemies = new ArrayList<Enemy>();
   }
 
   void setPosition(int x, int y, int w, int h) {
@@ -58,7 +73,7 @@ class Game {
     translate(rect.x, rect.y);
 
     pushStyle();
-    fill(bg);
+    fill(255);
     stroke(0);
     rect(0, 0, rect.width, rect.height);
     popStyle();
