@@ -3,13 +3,13 @@ class Enemy{
   PVector goal;
   float speed;
   PVector dir;
-  boolean dead;
+  int hitPoints;
   
   Enemy(int x, int y){
     pos = new PVector(x,y);
     speed = 1;
-    dir = new PVector();
-    dead = false;
+    dir = new PVector(random(-1,1), random(-1,1));
+    hitPoints = 3;
   }
   
   void setSpeed(float s){
@@ -21,14 +21,23 @@ class Enemy{
   }
   
   void update(){
-    dir = PVector.sub(goal, pos);
+    PVector toGoal = PVector.sub(goal, pos);
+    toGoal.normalize();
+    
+    // turn around faster when near goal to discourage goal blocking
+    float dToGoal = pos.dist(goal);
+    float m = map(dToGoal, 0, 50, 0.5, 0.1);
+    
+    toGoal.mult(constrain(m, 0.1, 0.5));
+    
     dir.normalize();
+    dir.add(toGoal);
     dir.mult(speed); 
     pos.add(dir); 
   }
   
   boolean isDead(){
-    return dead;
+    return hitPoints <= 0;
   }
   
   void checkBarriers(ArrayList<Barrier> barriers){
@@ -38,10 +47,17 @@ class Enemy{
       if(d.z < 1){
         // collision
         barrier.hit();
-        setSpeed(0);
-        dead = true;
+        dir.mult(-1);
+        pos.add(dir);
+        hitPoints--;
       }
     }
+
+    float d = PVector.dist(pos, goal);
+    if(d < 1){
+      hitPoints=  0;
+    }
+    
   }
   
   void draw(){

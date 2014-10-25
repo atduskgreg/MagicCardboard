@@ -2,13 +2,19 @@ import java.util.Iterator;
 class ContainGame extends Game {
   ArrayList<Barrier> barriers;
 
-  ContainGame(int x, int y, int w, int h) {
-    super(x, y, w, h);
+  ContainGame(String name, int x, int y, int w, int h) {
+    super(name, x, y, w, h);
 
     barriers = new ArrayList<Barrier>();
 
     Enemy e = new Enemy((int)random(w), (int)random(h));
     e.setGoal(w, h);
+    enemies.add(e);
+  }
+  
+  void addEnemy(){
+    Enemy e = new Enemy((int)random(rect.width), (int)random(rect.height));
+    e.setGoal(rect.width, rect.height);
     enemies.add(e);
   }
 
@@ -25,8 +31,10 @@ class ContainGame extends Game {
       enemy.checkBarriers(barriers);
       enemy.draw();
     }
-    
-    for(Iterator<Enemy> iterator = enemies.iterator(); iterator.hasNext();){
+  }
+  
+  void removeDeadEnemies(){
+     for(Iterator<Enemy> iterator = enemies.iterator(); iterator.hasNext();){
       Enemy enemy = iterator.next();
       if(enemy.isDead()){
         iterator.remove();
@@ -42,32 +50,21 @@ class ContainGame extends Game {
       }
     }
   }
+  
+  void keyPressed(char k){
+    if(k == 'e'){
+      addEnemy();
+    }
+  }
 
-  void draw() {
-    pushMatrix();
-    translate(rect.x, rect.y);
-
-    pushStyle();
-    fill(255);
-    stroke(0);
-    rect(0, 0, rect.width, rect.height);
-    popStyle();
-
-    fill(0);
-    stroke(0);
-    text("tokens: " + tokens.size(), 20, 20);
+  void innerDraw() {
     drawEnemies();
+    removeDeadEnemies();
     removeDeadBarriers();
 
     for(Barrier barrier : barriers){
       barrier.draw();
     }
-
-    for (Token token : tokens) {
-      token.draw();
-    }
-
-    popMatrix();
   }
 }
 

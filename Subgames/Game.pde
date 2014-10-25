@@ -4,10 +4,12 @@ class Game {
   ArrayList<Token> tokens;
   Rectangle rect;
   ArrayList<Enemy> enemies;
+  String name;
 
-  Game(int x, int y, int w, int h) {
+  Game(String name, int x, int y, int w, int h) {
     setup();
     setPosition(x, y, w, h);
+    this.name = name;
   }
   
   void mousePressed(int x, int y){
@@ -25,6 +27,9 @@ class Game {
     }
   }
   
+  void keyPressed(char k){
+    // do something
+  }
  
   
   void mouseDragged(int px, int py, int x, int y){
@@ -68,6 +73,9 @@ class Game {
     rect = new Rectangle(x,y,w,h);
   }
 
+  //implement in subclass
+  void innerDraw(){}
+
   void draw() {
     pushMatrix();
     translate(rect.x, rect.y);
@@ -81,9 +89,16 @@ class Game {
     fill(0);stroke(0);
     text("tokens: " + tokens.size(), 20,20);
 
+    pushStyle();
+    pushMatrix();
+    innerDraw();
+    popMatrix();
+    popStyle();
+
     for (Token token : tokens) {
       token.draw();
     }
+    
     
     popMatrix();
   }
