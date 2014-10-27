@@ -66,7 +66,7 @@ void draw() {
     player.draw(player.equals(currentPlayer()));
   }
 
-  if (mousePressed && !turn.hasFired() && !keyPressed) {
+  if (mousePressed && !turn.isComplete() && !keyPressed) {
     pushStyle();
     stroke(255, 150);
     strokeWeight(3);
@@ -88,6 +88,8 @@ void draw() {
       missile.draw();
     }
   }
+  
+  drawTurns();
 }
 
 Player currentPlayer() {
@@ -101,8 +103,10 @@ void drawTurns(){
   noStroke();
   fill(currentPlayer().getColor());
   
+  PVector p = new PVector(50,50);
+  
   for(int i = 0; i < turn.actionsRemaining(); i++){
-    
+    ellipse(p.x + i*20, p.y, 15,15);
   }
   
   popStyle();

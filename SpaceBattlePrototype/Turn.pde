@@ -1,14 +1,11 @@
 class Turn{
-  boolean fired = false;
-  boolean moved = false;
-  boolean scanned = false;
-  int num;
+  int player;
   int numPlayers;
   int actionsPerTurn;
   int actionsTaken;
   
   Turn(int numPlayers){
-    this.num = 0;
+    this.player = 0;
     this.numPlayers = numPlayers;
     this.actionsTaken = 0;
   }
@@ -26,14 +23,14 @@ class Turn{
   }
  
   int playerNum(){
-    return this.num;
+    return this.player;
   }
   
   void next(){
     actionsTaken = 0;
-    num++;
-    if(num > numPlayers-1){
-      num = 0;
+    player++;
+    if(player > numPlayers-1){
+      player = 0;
     }
   }
   
