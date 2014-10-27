@@ -11,104 +11,90 @@
 @interface MyView()
 @property (nonatomic) CGFloat averageYPosition;
 @property (nonatomic) CGFloat averageXPosition;
+@property (nonatomic) NSSet* touches;
 @property (nonatomic) BOOL box1;
 @property (nonatomic) BOOL box2;
-
 @end
 
 @implementation MyView
-
-@synthesize averageYPosition = _averageYPosition;
-
-- (void)setAverageYPosition:(CGFloat)averageYPosition
-{
-    _averageYPosition = averageYPosition;
-    [self setNeedsDisplay]; //Reset the display
-
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        //Initialization code
+        self.multipleTouchEnabled = YES;
     }
     return self;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 {
-    if (![self _processTouchesForPeek:touches]) {
+    //If the touch is not a side of hand touch, call the super method.
+    if (![self _processTouchesForPeek:[event allTouches]]) {
         [super touchesBegan:touches withEvent:event];
     }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 {
-    if (![self _processTouchesForPeek:touches]) {
+    //If the touch is not a side of hand touch, call the super method.
+    if (![self _processTouchesForPeek:[event allTouches]]) {
         [super touchesMoved:touches withEvent:event];
     }
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
-{
-    [super touchesEnded:touches withEvent:event];
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
-{
-    [super touchesCancelled:touches withEvent:event];
-}
-
-
+//Finds the average x and y position of the touches
+//@return: True if there is a touch size > 100, else False
 - (BOOL)_processTouchesForPeek:(NSSet *)touches {
     CGFloat sumOfYPositions = 0.0f;
     CGFloat sumOfXPositions = 0.0f;
     BOOL largeTouchFound = NO;
+    
     for (UITouch *touch in touches) {
         sumOfYPositions += [touch locationInView:self].y;
         sumOfXPositions += [touch locationInView:self].x;
         if ([touch respondsToSelector:@selector(majorRadius)]) {
             CGFloat touchSize = touch.majorRadius;
-            if (touchSize > 10) {
+            if (touchSize > 100) {
                 largeTouchFound = YES;
             }
         }
     }
-    if (!largeTouchFound) {
-        return NO;
-    }
-    if ((float)[touches count] <= 1) {
-        return NO;
-    }
+    
+//    if (!largeTouchFound) {
+//        return NO;
+//    }
+    
+    self.touches = touches;
     self.averageYPosition = sumOfYPositions/(float)[touches count];
     self.averageXPosition = sumOfXPositions/(float)[touches count];
-    self.box1 = [self _inBoundingBox:touches :160 :200 :0 :350];
-    self.box2 = [self _inBoundingBox:touches :380 :420 :0 :350];
-
+    self.box1 = [self _inBoundingBox:touches :170 :190 :0 :350];
+    self.box2 = [self _inBoundingBox:touches :390 :410 :0 :350];
+    [self setNeedsDisplay];
     return YES;
 }
 
-- (BOOL)_inBoundingBox:(NSSet *)touches :(int)top :(int)bottom :(int)left :(int)right;
+//@return: True if at least 90% of the bounding box's area is covered by touches, else False
+- (BOOL)_inBoundingBox:(NSSet *)touches :(float)top :(float)bottom :(float)left :(float)right;
 {
-    int count = 0;
+    CGFloat totalPercent = 0.0f;
+    CGFloat boxArea = (right-left)*(bottom-top);
     for (UITouch *touch in touches) {
-        if ([touch locationInView:self].y < top && [touch locationInView:self].y > bottom){
-            if ([touch locationInView:self].x < right && [touch locationInView:self].x > left){
-                count += 1;
-            }
-        }
+        float intersection = (MIN(right, [touch locationInView:self].x + touch.majorRadius) - MAX(left, [touch locationInView:self].x - touch.majorRadius)) * (MAX(bottom, [touch locationInView:self].y - 30)-MIN(top, [touch locationInView:self].y + 30));
+        totalPercent += intersection/boxArea;
     }
-    return (count > [touches count]/4);
+    NSLog(@"totalPercent : %f", totalPercent);
+    return (totalPercent > 0.9);
 }
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    //Draw a card
+    //Draw the top card. If the card's bounding box is activated, make the box green, else make it red.
     CGRect rectangle1 = CGRectMake(0, 0, 350, 180);
-    if (self.box1) {
+    if (self.box2) {
         CGContextSetRGBFillColor(context, 0.0, 1.0, 0.0, 0.5);
         CGContextSetRGBStrokeColor(context, 0.0, 1.0, 0.0, 0.5);
     }
@@ -118,9 +104,9 @@
     }
     CGContextFillRect(context, rectangle1);
     
-    //Draw a card
+    //Draw the bottom card. If the card's bounding box is activated, make the box green, else make it red.
     CGRect rectangle2 = CGRectMake(0, 400, 350, 180);
-    if (self.box2) {
+    if (self.box1) {
         CGContextSetRGBFillColor(context, 0.0, 1.0, 0.0, 0.5);
         CGContextSetRGBStrokeColor(context, 0.0, 1.0, 0.0, 0.5);
     }
