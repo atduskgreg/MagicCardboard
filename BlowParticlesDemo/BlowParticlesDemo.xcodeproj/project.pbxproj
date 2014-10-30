@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3778233A1A01D62A00F0BCCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 377823391A01D62A00F0BCCE /* main.m */; };
+		3778233D1A01D62A00F0BCCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3778233C1A01D62A00F0BCCE /* AppDelegate.m */; };
+		377823401A01D62A00F0BCCE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3778233F1A01D62A00F0BCCE /* GameScene.m */; };
+		377823421A01D62A00F0BCCE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 377823411A01D62A00F0BCCE /* GameScene.sks */; };
+		377823451A01D62A00F0BCCE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377823441A01D62A00F0BCCE /* GameViewController.m */; };
+		377823481A01D62A00F0BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377823461A01D62A00F0BCCE /* Main.storyboard */; };
+		3778234A1A01D62A00F0BCCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 377823491A01D62A00F0BCCE /* Images.xcassets */; };
+		3778234D1A01D62A00F0BCCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3778234B1A01D62A00F0BCCE /* LaunchScreen.xib */; };
+		377823591A01D62B00F0BCCE /* BlowParticlesDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 377823581A01D62B00F0BCCE /* BlowParticlesDemoTests.m */; };
+		377823651A01D64500F0BCCE /* ARAudioRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 377823631A01D64500F0BCCE /* ARAudioRecognizer.m */; };
+		3778236C1A01E12C00F0BCCE /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3778236A1A01E12C00F0BCCE /* FireParticles.sks */; };
+		3778236D1A01E12C00F0BCCE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3778236B1A01E12C00F0BCCE /* spark.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		377823531A01D62B00F0BCCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3778232C1A01D62A00F0BCCE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 377823331A01D62A00F0BCCE;
+			remoteInfo = BlowParticlesDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		377823341A01D62A00F0BCCE /* BlowParticlesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlowParticlesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		377823381A01D62A00F0BCCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		377823391A01D62A00F0BCCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3778233B1A01D62A00F0BCCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3778233C1A01D62A00F0BCCE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3778233E1A01D62A00F0BCCE /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		3778233F1A01D62A00F0BCCE /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		377823411A01D62A00F0BCCE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		377823431A01D62A00F0BCCE /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		377823441A01D62A00F0BCCE /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		377823471A01D62A00F0BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		377823491A01D62A00F0BCCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3778234C1A01D62A00F0BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		377823521A01D62B00F0BCCE /* BlowParticlesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlowParticlesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		377823571A01D62B00F0BCCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		377823581A01D62B00F0BCCE /* BlowParticlesDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlowParticlesDemoTests.m; sourceTree = "<group>"; };
+		377823621A01D64500F0BCCE /* ARAudioRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARAudioRecognizer.h; sourceTree = "<group>"; };
+		377823631A01D64500F0BCCE /* ARAudioRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARAudioRecognizer.m; sourceTree = "<group>"; };
+		377823641A01D64500F0BCCE /* ARAudioRecognizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARAudioRecognizerDelegate.h; sourceTree = "<group>"; };
+		3778236A1A01E12C00F0BCCE /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireParticles.sks; path = ../FireParticles.sks; sourceTree = "<group>"; };
+		3778236B1A01E12C00F0BCCE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		377823311A01D62A00F0BCCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3778234F1A01D62B00F0BCCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3778232B1A01D62A00F0BCCE = {
+			isa = PBXGroup;
+			children = (
+				377823361A01D62A00F0BCCE /* BlowParticlesDemo */,
+				377823551A01D62B00F0BCCE /* BlowParticlesDemoTests */,
+				377823351A01D62A00F0BCCE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		377823351A01D62A00F0BCCE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				377823341A01D62A00F0BCCE /* BlowParticlesDemo.app */,
+				377823521A01D62B00F0BCCE /* BlowParticlesDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		377823361A01D62A00F0BCCE /* BlowParticlesDemo */ = {
+			isa = PBXGroup;
+			children = (
+				377823621A01D64500F0BCCE /* ARAudioRecognizer.h */,
+				377823631A01D64500F0BCCE /* ARAudioRecognizer.m */,
+				377823641A01D64500F0BCCE /* ARAudioRecognizerDelegate.h */,
+				3778233B1A01D62A00F0BCCE /* AppDelegate.h */,
+				3778233C1A01D62A00F0BCCE /* AppDelegate.m */,
+				3778233E1A01D62A00F0BCCE /* GameScene.h */,
+				3778233F1A01D62A00F0BCCE /* GameScene.m */,
+				377823411A01D62A00F0BCCE /* GameScene.sks */,
+				377823431A01D62A00F0BCCE /* GameViewController.h */,
+				377823441A01D62A00F0BCCE /* GameViewController.m */,
+				3778236A1A01E12C00F0BCCE /* FireParticles.sks */,
+				3778236B1A01E12C00F0BCCE /* spark.png */,
+				377823461A01D62A00F0BCCE /* Main.storyboard */,
+				377823491A01D62A00F0BCCE /* Images.xcassets */,
+				3778234B1A01D62A00F0BCCE /* LaunchScreen.xib */,
+				377823371A01D62A00F0BCCE /* Supporting Files */,
+			);
+			path = BlowParticlesDemo;
+			sourceTree = "<group>";
+		};
+		377823371A01D62A00F0BCCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				377823381A01D62A00F0BCCE /* Info.plist */,
+				377823391A01D62A00F0BCCE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		377823551A01D62B00F0BCCE /* BlowParticlesDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				377823581A01D62B00F0BCCE /* BlowParticlesDemoTests.m */,
+				377823561A01D62B00F0BCCE /* Supporting Files */,
+			);
+			path = BlowParticlesDemoTests;
+			sourceTree = "<group>";
+		};
+		377823561A01D62B00F0BCCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				377823571A01D62B00F0BCCE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		377823331A01D62A00F0BCCE /* BlowParticlesDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3778235C1A01D62B00F0BCCE /* Build configuration list for PBXNativeTarget "BlowParticlesDemo" */;
+			buildPhases = (
+				377823301A01D62A00F0BCCE /* Sources */,
+				377823311A01D62A00F0BCCE /* Frameworks */,
+				377823321A01D62A00F0BCCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlowParticlesDemo;
+			productName = BlowParticlesDemo;
+			productReference = 377823341A01D62A00F0BCCE /* BlowParticlesDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		377823511A01D62B00F0BCCE /* BlowParticlesDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3778235F1A01D62B00F0BCCE /* Build configuration list for PBXNativeTarget "BlowParticlesDemoTests" */;
+			buildPhases = (
+				3778234E1A01D62B00F0BCCE /* Sources */,
+				3778234F1A01D62B00F0BCCE /* Frameworks */,
+				377823501A01D62B00F0BCCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				377823541A01D62B00F0BCCE /* PBXTargetDependency */,
+			);
+			name = BlowParticlesDemoTests;
+			productName = BlowParticlesDemoTests;
+			productReference = 377823521A01D62B00F0BCCE /* BlowParticlesDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3778232C1A01D62A00F0BCCE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Greg Borenstein";
+				TargetAttributes = {
+					377823331A01D62A00F0BCCE = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					377823511A01D62B00F0BCCE = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 377823331A01D62A00F0BCCE;
+					};
+				};
+			};
+			buildConfigurationList = 3778232F1A01D62A00F0BCCE /* Build configuration list for PBXProject "BlowParticlesDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3778232B1A01D62A00F0BCCE;
+			productRefGroup = 377823351A01D62A00F0BCCE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				377823331A01D62A00F0BCCE /* BlowParticlesDemo */,
+				377823511A01D62B00F0BCCE /* BlowParticlesDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		377823321A01D62A00F0BCCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3778234D1A01D62A00F0BCCE /* LaunchScreen.xib in Resources */,
+				3778236D1A01E12C00F0BCCE /* spark.png in Resources */,
+				3778234A1A01D62A00F0BCCE /* Images.xcassets in Resources */,
+				3778236C1A01E12C00F0BCCE /* FireParticles.sks in Resources */,
+				377823421A01D62A00F0BCCE /* GameScene.sks in Resources */,
+				377823481A01D62A00F0BCCE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		377823501A01D62B00F0BCCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		377823301A01D62A00F0BCCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377823451A01D62A00F0BCCE /* GameViewController.m in Sources */,
+				3778233D1A01D62A00F0BCCE /* AppDelegate.m in Sources */,
+				377823401A01D62A00F0BCCE /* GameScene.m in Sources */,
+				377823651A01D64500F0BCCE /* ARAudioRecognizer.m in Sources */,
+				3778233A1A01D62A00F0BCCE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3778234E1A01D62B00F0BCCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377823591A01D62B00F0BCCE /* BlowParticlesDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		377823541A01D62B00F0BCCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 377823331A01D62A00F0BCCE /* BlowParticlesDemo */;
+			targetProxy = 377823531A01D62B00F0BCCE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		377823461A01D62A00F0BCCE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				377823471A01D62A00F0BCCE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3778234B1A01D62A00F0BCCE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3778234C1A01D62A00F0BCCE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3778235A1A01D62B00F0BCCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		3778235B1A01D62B00F0BCCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3778235D1A01D62B00F0BCCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BlowParticlesDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3778235E1A01D62B00F0BCCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BlowParticlesDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		377823601A01D62B00F0BCCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlowParticlesDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlowParticlesDemo.app/BlowParticlesDemo";
+			};
+			name = Debug;
+		};
+		377823611A01D62B00F0BCCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlowParticlesDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlowParticlesDemo.app/BlowParticlesDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3778232F1A01D62A00F0BCCE /* Build configuration list for PBXProject "BlowParticlesDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3778235A1A01D62B00F0BCCE /* Debug */,
+				3778235B1A01D62B00F0BCCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3778235C1A01D62B00F0BCCE /* Build configuration list for PBXNativeTarget "BlowParticlesDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3778235D1A01D62B00F0BCCE /* Debug */,
+				3778235E1A01D62B00F0BCCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3778235F1A01D62B00F0BCCE /* Build configuration list for PBXNativeTarget "BlowParticlesDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				377823601A01D62B00F0BCCE /* Debug */,
+				377823611A01D62B00F0BCCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3778232C1A01D62A00F0BCCE /* Project object */;
+}
