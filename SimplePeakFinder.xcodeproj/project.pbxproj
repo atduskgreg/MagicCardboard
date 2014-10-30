@@ -173,10 +173,11 @@
 				TargetAttributes = {
 					F0FA1E0D19EC443A00EDBADA = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 3F2JBZE82C;
+						DevelopmentTeam = BX2YKHFK59;
 					};
 					F0FA1E2619EC443A00EDBADA = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = BX2YKHFK59;
 						TestTargetID = F0FA1E0D19EC443A00EDBADA;
 					};
 				};
@@ -353,6 +354,7 @@
 				INFOPLIST_FILE = SimplePeakFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -363,6 +365,7 @@
 				INFOPLIST_FILE = SimplePeakFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -419,6 +422,7 @@
 				F0FA1E3319EC443A00EDBADA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0FA1E3419EC443A00EDBADA /* Build configuration list for PBXNativeTarget "SimplePeakFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +431,7 @@
 				F0FA1E3619EC443A00EDBADA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

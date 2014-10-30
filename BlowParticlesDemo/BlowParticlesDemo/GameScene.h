@@ -15,10 +15,18 @@
     UIColor* backgroundColor;
     SKEmitterNode* fireEmitter;
     NSInteger nParticles;
+    
+    
+    NSMutableArray* touchNodes;
 }
 
 - (void)audioRecognized:(ARAudioRecognizer *)recognizer;
 - (void)audioLevelUpdated:(ARAudioRecognizer *)recognizer averagePower:(float)averagePower peakPower:(float)peakPower;
 
+- (void) clearTouchNodes;
+
+- (SKShapeNode*) cirlceNodeFromTouch:(UITouch*)touch;
+
+-(void) moveEmitterToObject:(NSSet*) touches;
 
 @end
