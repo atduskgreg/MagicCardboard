@@ -1,3 +1,10 @@
+/* TODO:
+    * build third game
+    * design round timer system
+    * make tokens global
+    * explore network communication
+*/ 
+
 Game[] games;
 
 void setup() {
@@ -5,8 +12,8 @@ void setup() {
   games = new Game[3];
   games[0] = new ContainGame("Contain", 0, 0, width/2, height/2);
   games[1] = new Game("Other", width/2, 0, width/2, height/2);
+  
   InvestGame ig = new InvestGame("Invest", width/2, height/2, width/2, height/2);
-
   ig.addGame(games[0]);
   ig.addGame(games[1]);
   games[2] = ig;
