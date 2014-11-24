@@ -36,16 +36,10 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 {
-    //NSLog(@"The value of integer num is %lu", (unsigned long)[touches count]);
-
-    // If the touch is not a side of hand touch, call the super method.
-    if (![self sideOfHandTouch:[event allTouches]]) {
+    NSSet *location;
+    if ([self sideOfHandTouch:[event allTouches]]) {
         for (GABCard *card in cards){
-            [card updateHand:NO];
-        }
-    } else {
-        for (GABCard *card in cards){
-            [card updateHand:YES];
+            [card coverBegan:[event allTouches]];
         }
     }
     [super touchesBegan:touches withEvent:event];
@@ -53,41 +47,34 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 {
-    // If the touch is not a side of hand touch, call the super method.
-    if (![self sideOfHandTouch:[event allTouches]]) {
+    if ([self sideOfHandTouch:[event allTouches]]) {
         for (GABCard *card in cards){
-            [card updateHand:NO];
-            [card updateBoundingBox:NO];
-        }
-    } else {
-        for (GABCard *card in cards){
-            [card updateHand:YES];
-            if ([card inBoundingBox]){
-                [card updateBoundingBox:NO];
-            } else {
-                [card updateBoundingBox:NO];
-            }
+            [card coverContinued:[event allTouches]];
         }
     }
     [super touchesMoved:touches withEvent:event];
 }
 
-// TODO: Why is there no majorRadius field?
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+{
+    for (GABCard *card in cards){
+        [card coverEnded:[event allTouches]];
+    }
+    [super touchesMoved:touches withEvent:event];
+}
+
 // @return: True if there is a touch size > 100, else False
 - (BOOL)sideOfHandTouch:(NSSet *)touches {
     BOOL largeTouchFound = NO;
     
     for (UITouch *touch in touches) {
         if ([touch respondsToSelector:@selector(majorRadius)]) {
-            //NSLog(@"Size of touch is %lu", (unsigned long)touch.majorRadius);
             CGFloat touchSize = touch.majorRadius;
-            if (touchSize > 10) {
+            if (touchSize > 100) {
                 largeTouchFound = YES;
             }
         }
     }
-    
-    //NSLog(@"Side of Hand Touch: %d", largeTouchFound);
     return largeTouchFound;
 }
 

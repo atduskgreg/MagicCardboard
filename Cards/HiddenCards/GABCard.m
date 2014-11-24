@@ -15,7 +15,7 @@
     frontTexture = [SKTexture textureWithImageNamed:name];
     backTexture = [SKTexture textureWithImageNamed:@"card_back"];
     self = [super initWithTexture:backTexture];
-    self.size = CGSizeMake(137.5, 192.5);
+    self.size = CGSizeMake(175, 250);
     self.name = @"card";
     
     super.userInteractionEnabled = TRUE;
@@ -42,7 +42,7 @@
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"The value of integer num is %lu", (unsigned long)[touches count]);
+//NSLog(@"The value of integer num is %lu", (unsigned long)[touches count]);
     if (!sideOfHand){
         if (!faceUp){
             for (UITouch* touch in touches){
@@ -57,7 +57,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for(UITouch* touch in touches){
-        if (inBoundingBox){
+        if (touch.tapCount > 1){
                 [self flip];
         } else {
             self.zPosition = 15;
@@ -74,9 +74,57 @@
     }
 }
 
-// TODO: Implement this method.
-- (BOOL)inBoundingBox:(NSSet *)touches {
-    return YES;
+- (BOOL)isCoveredByTouches:(NSSet *)touches {
+    float top = self.size.height;
+    float bottom = self.size.height/2;
+    float left = -self.size.width/2;
+    float right = self.size.width/2;
+    for (UITouch *touch in touches){
+        float y = [touch locationInNode:self].y;
+        float x = [touch locationInNode:self].x;
+        if ([touch locationInNode:self].y < top && [touch locationInNode:self].y > bottom && [touch locationInNode:self].x > left && [touch locationInNode:self].x < right) {
+            NSLog(@"y position : %f", y);
+            NSLog(@"x position : %f", x);
+            NSLog(@"top : %f", top);
+            NSLog(@"bottom : %f", bottom);
+            NSLog(@"left : %f", left);
+            NSLog(@"right : %f", right);
+            return true;
+        }
+    }
+    return false;
+}
+
+- (void)coverBegan:(NSSet *)touches {
+    if ([self isCoveredByTouches:touches]) {
+        [self flipUp];
+    } else {
+        [self flipDown];
+    }
+}
+
+- (void)coverContinued:(NSSet *)touches {
+    if ([self isCoveredByTouches:touches]) {
+        [self flipUp];
+    } else {
+        [self flipDown];
+    }
+}
+
+- (void)coverEnded:(NSSet *)touches {
+    [self flipDown];
+}
+
+-(void) flipUp
+{
+    faceUp = true;
+    self.texture = frontTexture;
+}
+
+-(void) flipDown
+{
+    faceUp = false;
+    self.texture = backTexture;
 }
 
 -(void) flip
@@ -89,5 +137,5 @@
     
     }
 }
-
+    
 @end

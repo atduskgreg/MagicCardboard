@@ -16,11 +16,30 @@
     BOOL inBoundingBox;
     SKLabelNode* debugLabel;
 }
--(id) initWithImageNamed:(NSString *)name;
+
+-(id) initWithImageNamed:(NSString *)nme;
 -(void) flip;
+-(void) flipUp;
+-(void) flipDown;
 -(void) updatePosition:(CGPoint)point;
 -(void) updateHand:(BOOL)hand;
 -(void) updateBoundingBox:(BOOL)hand;
--(BOOL) inBoundingBox;
+-(BOOL) isCoveredByTouches:(NSSet*)touches;
+-(void) coverBegan:(NSSet*)touches;
+-(void) coverContinued:(NSSet*)touches;
+-(void) coverEnded:(NSSet*)touches;
+
+// implemented in subclasses
+
+// GABOneUseCard : GABCard{}
+// in coverEnded implementation
+// it makes itself disappear
+
+// in parent...
+// in touchesBegan...
+// for a particular card
+// if([card isCoveredByTouches:touches]){
+//      [card coverBegan:touches];
+//}
 
 @end

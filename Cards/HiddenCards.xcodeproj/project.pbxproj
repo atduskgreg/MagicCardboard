@@ -410,6 +410,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HiddenCards/HiddenCards-Prefix.pch";
 				INFOPLIST_FILE = "HiddenCards/HiddenCards-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -424,6 +425,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HiddenCards/HiddenCards-Prefix.pch";
 				INFOPLIST_FILE = "HiddenCards/HiddenCards-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -489,6 +491,7 @@
 				375F496419B52C3800790FB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		375F496519B52C3800790FB1 /* Build configuration list for PBXNativeTarget "HiddenCardsTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +500,7 @@
 				375F496719B52C3800790FB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
