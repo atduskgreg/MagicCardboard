@@ -20,6 +20,7 @@
     
     super.userInteractionEnabled = TRUE;
 
+    timeCovered = 0;
     faceUp  = false;
     sideOfHand = false;
     inBoundingBox = false;

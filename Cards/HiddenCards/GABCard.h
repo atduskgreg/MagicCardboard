@@ -14,6 +14,7 @@
     BOOL faceUp;
     BOOL sideOfHand;
     BOOL inBoundingBox;
+    int timeCovered;
     SKLabelNode* debugLabel;
 }
 
